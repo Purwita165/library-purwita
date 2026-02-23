@@ -1,33 +1,20 @@
 interface AuthorCardProps {
-  name: string;
-  books: number;
-  image: string;
+  name: string
+  bookCount: number
 }
 
-export default function AuthorCard({
-  name,
-  books,
-  image,
-}: AuthorCardProps) {
+export default function AuthorCard({ name, bookCount }: AuthorCardProps) {
   return (
     <div className="flex items-center gap-3">
-
-      <img
-        src={image}
-        alt={name}
-        className="w-[48px] h-[48px] rounded-full"
-      />
+      {/* avatar placeholder */}
+      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-200 to-blue-400" />
 
       <div>
-        <div className="font-semibold text-sm">
-          {name}
-        </div>
-
-        <div className="text-xs text-gray-500">
-          {books} books
-        </div>
+        <p className="font-medium text-sm">{name}</p>
+        <p className="text-xs text-gray-500">
+          {bookCount} books
+        </p>
       </div>
-
     </div>
-  );
+  )
 }

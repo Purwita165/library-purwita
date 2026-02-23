@@ -1,24 +1,35 @@
-import Header from "../components/layout/Header";
-import Footer from "../components/layout/Footer";
+import { useState } from "react";
 
+import Header from "../components/layout/Header";
 import WelcomeBanner from "../components/home/WelcomeBanner";
+import CategorySection from "../components/home/CategorySection";
 import RecommendationSection from "../components/home/RecommendationSection";
 import PopularAuthorsSection from "../components/home/PopularAuthorsSection";
 
 export default function DashboardPage() {
+
+  const [activeCategoryId, setActiveCategoryId] =
+    useState<number | null>(null);
+
   return (
-    <div className="min-h-screen bg-white">
+    <>
 
       <Header />
 
       <WelcomeBanner />
 
-      <RecommendationSection />
+      <CategorySection
+        activeCategoryId={activeCategoryId}
+        onCategoryChange={setActiveCategoryId}
+      />
+
+      <RecommendationSection
+        activeCategoryId={activeCategoryId}
+      />
 
       <PopularAuthorsSection />
 
-      <Footer />
-
-    </div>
+    </>
   );
+
 }

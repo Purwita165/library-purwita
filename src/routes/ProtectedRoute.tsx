@@ -7,10 +7,9 @@ interface ProtectedRouteProps {
 
 export default function ProtectedRoute({ children }: ProtectedRouteProps) {
 
-  // sementara pakai localStorage sebagai auth indicator
-  const isAuthenticated = localStorage.getItem("isLoggedIn") === "true";
+  const token = localStorage.getItem("token");
 
-  if (!isAuthenticated) {
+  if (!token) {
     return <Navigate to="/login" replace />;
   }
 

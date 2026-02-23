@@ -1,51 +1,64 @@
-interface BookCardProps {
+import { useNavigate } from "react-router-dom";
+
+type BookCardProps = {
+  id: number;
   title: string;
   author: string;
+  coverImage: string;
   rating: number;
-  image: string;
-}
+};
 
 export default function BookCard({
+  id,
   title,
   author,
+  coverImage,
   rating,
-  image,
 }: BookCardProps) {
+
+  const navigate = useNavigate();
+
   return (
     <div
-      className="
-        w-[160px]
-        cursor-pointer
-        hover:scale-105
-        transition
-      "
+      className="w-[224px] flex flex-col cursor-pointer hover:opacity-80 transition"
+      onClick={() => navigate(`/books/${id}`)}
     >
+
+      {/* Cover */}
       <img
-        src={image}
+        src={coverImage}
         alt={title}
-        className="
-          w-[160px]
-          h-[220px]
-          object-cover
-          rounded-xl
-        "
+        className="w-full h-56 object-cover rounded-lg"
       />
 
-      <div className="mt-2">
+      {/* Content */}
+      <div className="flex flex-col gap-1 p-4">
 
-        <div className="text-sm font-semibold text-gray-900">
+        {/* Title */}
+        <div className="text-[18px] font-bold text-neutral-900">
           {title}
         </div>
 
-        <div className="text-xs text-gray-500">
+        {/* Author */}
+        <div className="text-[16px] text-neutral-700">
           {author}
         </div>
 
-        <div className="text-xs text-yellow-500 mt-1">
-          ★ {rating}
+        {/* Rating */}
+        <div className="flex items-center gap-1">
+
+          <span className="text-yellow-500 text-lg">
+            ★
+          </span>
+
+          <span className="text-[16px] font-semibold">
+            {rating}
+          </span>
+
         </div>
 
       </div>
+
     </div>
   );
 }

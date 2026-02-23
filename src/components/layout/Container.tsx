@@ -1,24 +1,14 @@
-import type { ReactNode } from "react";
-
 interface ContainerProps {
-  children: ReactNode;
+  children: React.ReactNode;
   className?: string;
 }
 
 export default function Container({ children, className = "" }: ContainerProps) {
   return (
-    <div className="w-full flex justify-center px-4 sm:px-6 lg:px-8">
-      
-      <div
-        className={`
-          w-full
-          max-w-[1280px]
-          ${className}
-        `}
-      >
+    <div className="w-full px-4">
+      <div className={`max-w-[1280px] mx-auto ${className}`}>
         {children}
       </div>
-
     </div>
   );
 }
