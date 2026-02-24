@@ -1,73 +1,85 @@
-# React + TypeScript + Vite
+Library Purwita
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Library Purwita is a web-based library application built using React and TypeScript.  
+This project was developed as part of a frontend bootcamp assignment with focus on clean architecture, state management, and modern UI practices.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Live Demo
 
-## React Compiler
+https://library-purwita.vercel.app
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+-React + TypeScript – Component-based architecture with type safety  
+-Vite – Fast development & build tool  
+-Tailwind CSS – Utility-first styling  
+-Redux Toolkit – Global state management (auth, UI state)  
+-TanStack Query (React Query) – Data fetching & caching  
+-React Router – Routing & protected routes  
+-Day.js – Date formatting  
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Features
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Authentication
+- Login & Register
+- JWT token handling
+- Protected routes
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Book Browsing
+- View book list
+- Search & filter by category
+- Book detail page
+- Review display
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Borrow System
+- Borrow book with optimistic update
+- Stock automatically reduced
+- Loan history tracking
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+User Features
+- My Loans (BORROWED / RETURNED status)
+- My Profile (user data & statistics)
+
+---
+
+Project Structure
+
+src/ 
+├── components/   → Reusable UI components 
+├── pages/        → Main application pages 
+├── services/     → API service layer 
+├── routes/       → Route protection 
+├── constants/    → Static configs 
+├── lib/          → Utility functions
+
+The project follows a layered approach:
+- UI Layer (components)
+- State Layer (Redux & React Query)
+- Service Layer (API calls)
+- Routing Layer (ProtectedRoute)
+
+---
+
+Installation & Setup
+
+```bash
+npm install
+npm run dev
+
+MVP Scope
+Login & Register working
+Book list with filter/search
+Book detail & reviews
+Borrow book with stock update
+Loan history
+Responsive UI
+Loading & error states handled
+
+Author
+Purwita Musaffa
+Frontend Developer
