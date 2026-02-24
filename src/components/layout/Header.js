@@ -1,5 +1,0 @@
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import Container from "./Container";
-export default function Header() {
-    return (_jsx("header", { className: "w-full border-b border-gray-200 bg-white", children: _jsxs(Container, { className: "flex items-center justify-between h-[72px]", children: [_jsxs("div", { className: "flex items-center gap-2", children: [_jsx("img", { src: "/logo.svg", alt: "Booky", className: "w-[32px] h-[32px]" }), _jsx("span", { className: "text-[20px] font-semibold text-gray-900", children: "Booky" })] }), _jsx("div", { className: "flex-1 max-w-[500px] mx-8", children: _jsx("input", { type: "text", placeholder: "Search books...", className: "\r\n              w-full\r\n              h-[44px]\r\n              px-4\r\n              border\r\n              border-gray-300\r\n              rounded-xl\r\n              outline-none\r\n              focus:border-blue-500\r\n            " }) }), _jsx("div", { className: "flex items-center gap-4", children: _jsx("div", { className: "w-[40px] h-[40px] bg-gray-200 rounded-full" }) })] }) }));
-}
